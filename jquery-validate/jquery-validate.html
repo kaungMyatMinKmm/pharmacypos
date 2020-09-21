@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<title>jQuery Validate</title>
+	<style>
+		body {
+			font-family: arial;
+		}
+		label {
+			display: block;
+			color: #555;
+		}
+		label.error {
+			color: #900;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<form id="comment" action="">
+		<p>
+			<label for="cname">Name (required, at least 2 characters)</label>
+			<input id="cname" name="name">
+		<p>
+			<label for="cemail">E-Mail (required)</label>
+			<input id="cemail" type="email" name="email" />
+		</p>
+		<p>
+			<label for="curl">URL (optional)</label>
+			<input id="curl" type="url" name="url" />
+		</p>
+		<p>
+			<label for="ccomment">Your comment (required)</label>
+			<textarea id="ccomment" name="comment"></textarea>
+		</p>
+		<p>
+			<input class="submit" type="submit" value="Submit"/>
+		</p>
+	</form>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#comment").validate({
+				rules: {
+					name: {
+						"required": true,
+						"min": 2
+					},
+					email: {
+						"required": true,
+						"email": true
+					},
+						comment: {
+						"required": true
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>
