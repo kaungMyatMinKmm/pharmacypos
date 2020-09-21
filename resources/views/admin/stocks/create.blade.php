@@ -61,8 +61,8 @@
                           <div class="form-group row">
                             <label for="manufacturer" class="col-sm-3 col-form-label">Manufacturer</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" id="manufacturer" name="manufacturer">
-                              @error('name')
+                              <input type="text" class="form-control @error('manufacturer') is-invalid @enderror" id="manufacturer" name="manufacturer">
+                              @error('manufacturer')
                                 <p class="text-danger">{{$message}}</p>
                               @enderror
                             </div>
@@ -71,9 +71,9 @@
                           <div class="form-group row">
                             <label for="expired" class="col-sm-3 col-form-label">Expired</label>
                             <div class="col-sm-9">
-                              <input type="date" class="form-control" id="expired" name="expired">
+                              <input type="date" class="form-control @error('expired') is-invalid @enderror" id="expired" name="expired">
 
-                              @error('name')
+                              @error('Expired')
                                 <p class="text-danger">{{$message}}</p>
                               @enderror
                             </div>
@@ -82,9 +82,9 @@
                           <div class="form-group row">
                             <label for="buy_price" class="col-sm-3 col-form-label">Buy Price</label>
                             <div class="col-sm-9">
-                              <input type="number" class="form-control" id="buy_price" name="buy_price">
+                              <input type="number" class="form-control @error('buy-price') is-invalid @enderror" id="buy_price" name="buy_price">
 
-                              @error('name')
+                              @error('buy-price')
                                 <p class="text-danger">{{$message}}</p>
                               @enderror
                             </div>
@@ -93,9 +93,9 @@
                           <div class="form-group row">
                             <label for="sales_price" class="col-sm-3 col-form-label">Sales Price</label>
                             <div class="col-sm-9">
-                              <input type="number" class="form-control" id="sales_price" name="sales_price">
+                              <input type="number" class="form-control @error('sales-price') is-invalid @enderror" id="sales_price" name="sales_price">
 
-                              @error('name')
+                              @error('sales-price')
                                 <p class="text-danger">{{$message}}</p>
                               @enderror
                             </div>
@@ -104,9 +104,9 @@
                           <div class="form-group row">
                             <label for="profit" class="col-sm-3 col-form-label">Profit</label>
                             <div class="col-sm-9">
-                              <input type="number" class="form-control" id="profit" name="profit">
+                              <input type="number" class="form-control @error('profit') is-invalid @enderror" id="profit" name="profit">
 
-                              @error('name')
+                              @error('profit')
                                 <p class="text-danger">{{$message}}</p>
                               @enderror
                             </div>
