@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="row"> 
-		    <table class="table table-hover table-dark table-responsive-lg data-table">
+		    <table class="table table-hover table-dark table-responsive-lg-md data-table">
 				  <thead>
 				    <tr>
 				      <th scope="col">No</th>
@@ -51,7 +51,7 @@
 
 				  	<tr>
 				  		<th scope="row">{{$i++}}</th>
-				  		<td >{!! DNS1D::getBarcodeHTML($stock->barcode, 'C128A')!!}{{$stock->barcode}}</td>
+				  		<td>{!! DNS1D::getBarcodeHTML($stock->barcode, 'C128A')!!}{{$stock->barcode}}</td>
 				  		<td>{{$stock->name}}</td>
 				  		<td>{{$stock->qty}}</td>
 				  		<td>{{$stock->expired}}</td>

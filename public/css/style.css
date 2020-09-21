@@ -49,3 +49,7 @@ thead .qty{
 	width: 60%;
 	float: right;
 }
+
+#DataTables_Table_0_wrapper{
+	width: 100%;
+}

@@ -26,7 +26,7 @@ class StocksController extends Controller
         }else if($lessStocks){
             $stocks = Stock::orderBy('qty', 'asc')->get();
         }else{
-             $stocks = Stock::all();
+             $stocks = Stock::latest()->get();
         }
 
         $users  = User::all();
@@ -63,7 +63,7 @@ class StocksController extends Controller
         } else {
           $request->validate([
             'name' => 'required|string|max:191',
-            'qty' => 'required|integer|max:191',
+            'qty' => 'required|integer',
             'distributor' => 'required|string|max:191',
             'manufacturer' => 'required|string|max:191',
             'expired' => 'required|string|max:191',

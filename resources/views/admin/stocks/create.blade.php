@@ -25,7 +25,22 @@
                     <form action="{{route('admin.stocks.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
-                          <div class="form-group row">
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a href="#manual-form" class="nav-link active text-success" data-toggle="tab" >Manual</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a href="#excel-form" class="nav-link text-success" data-toggle="tab" >Excel </a>
+                        </li> 
+                      </ul>
+
+
+                      <div class="tab-content" id="myTabContent">
+
+                        <div id="manual-form" class="tab-pane fade show active" role="tabpanel" aria-labelledby="manual-form-tab">
+                          
+                          <div class="form-group row mt-3">
                             <label for="name" class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
@@ -112,12 +127,19 @@
                             </div>
                           </div>
 
+                        </div>
+
+                      
+                        <div id="excel-form" class="tab-pane fade mt-3" role="tabpanel" aria-labelledby="excel-form">
                           <div class="form-group row">
                             <label for="file" class="col-sm-3 col-form-label">Upload File</label>
                             <div class="col-sm-9">
                               <input type="file" class="" id="file" name="file">
                             </div>
                           </div>
+                        </div>
+
+                      </div>
                           
                           <div class="form-group row">
                             <div class="col-sm-12">
