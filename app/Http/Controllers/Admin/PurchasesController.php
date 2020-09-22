@@ -30,7 +30,7 @@ class PurchasesController extends Controller
 
         }else{
 
-            $purchases = Purchase::all();
+            $purchases = Purchase::latest()->get();
         }
         
         return view('admin.purchases.index',compact("purchases"));
@@ -60,14 +60,24 @@ class PurchasesController extends Controller
 
         
         $data = request('data');
-
+        
         if ($data) {
             # code...
-               
+                
+                 $request->validate([
+                    'voucher_no'=> 'required',
+                    'total' => 'required',
+                    'distributor'=> 'required',
+                    'manufacturer'=>'required',
+                    'qty' =>'required'
+                ]);
+
                 $voucher_no = request('voucher_no');
                 $total = request('total');
                 $distributor = request('distributor');
                 $manufacturer = request('manufacturer');
+
+
 
                 $purchase = Purchase::create([
 
@@ -90,7 +100,7 @@ class PurchasesController extends Controller
                 }
              }
 
-             return redirect()->route('admin.purchases.index');
+             return redirect()->route('admin.purchases.create')->with('info','Successfully Added!');
         
         
 
@@ -150,6 +160,6 @@ class PurchasesController extends Controller
 
         $purchase->delete();
 
-        return redirect()->route('admin.purchases.index');
+        return redirect()->route('admin.purchases.index')->with('delete',"Successfully Deleted!");
     }
 }

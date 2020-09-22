@@ -3,6 +3,12 @@
 
 <div class="container-fluid row">
 
+    @if(session('info'))
+        <div class="alert alert-primary">
+          {{session('info')}}
+        </div>
+    @endif
+
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card">
             <div class="card-header">
@@ -12,9 +18,13 @@
                     </div>
 
                     <div class="col-2">
-                      <a type="button"  type="button" class="btn btn-outline-info btn-sm float-left" id="" data-toggle="modal" data-target="#add-stock" class="btn btn-outline-success btn-block float-right "  >
+                      <a type="button"  type="button" id="" data-toggle="modal" data-target="#add-stock" class="btn btn-outline-success btn-block float-right "  >
                         <i class="far fa-plus-square"></i> <span>Add stock</span>
-                    </a>
+                      </a>
+
+                       <a type="button"  type="button" id="" href="{{route('admin.purchases.index')}}"  class="btn btn-info btn-block float-right "  >
+                        <i class="far fa-arrow-alt-circle-left"></i> <span>Back</span>
+                      </a>
                     </div>
                 </div>
             </div>

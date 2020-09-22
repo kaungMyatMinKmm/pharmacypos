@@ -92,7 +92,7 @@ class StocksController extends Controller
       }
         
 
-        return redirect()->route('admin.stocks.create');
+        return redirect()->route('admin.stocks.create')->with('info', "Successfully added!");
     }
 
     /**
@@ -156,7 +156,7 @@ class StocksController extends Controller
 
         $stock->save();
 
-        return redirect()->route('admin.stocks.index');
+        return redirect()->route('admin.stocks.index')->with('info', "Successfully Updated!");
     }
 
     /**
@@ -171,6 +171,6 @@ class StocksController extends Controller
         $stock = Stock::find($id);
         $stock->delete();
 
-        return redirect()->route('admin.stocks.index');
+        return redirect()->route('admin.stocks.index')->with('delete','Successfully Deleted!');
     }
 }
